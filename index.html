@@ -30,6 +30,7 @@
 			font-family: 'Lobster', cursive;
 			font-size: 4rem;
 			text-align: center;
+			margin-bottom: 5vh;
 
 		}
 
@@ -58,13 +59,56 @@
         .jx-slider {
             margin-top: 1em;
         }
+
+		footer {
+			padding-top: 5vh;
+		}
+
+		.wave {
+  --c: #f3ea5f; /* Color */
+  --t:5px;   /* Thickness */
+  --h:30px;  /* Height  */
+  --w:60px; /* Width  */
+  --p:12px;  /* adjust this to correct the position when changing the other values*/
+  
+  margin:5px auto;
+  width:calc(var(--w)*4);
+  height:calc(var(--h) + 10px);
+  overflow:hidden;
+  position:relative;
+}
+.wave:before {
+  content:"";
+  position:absolute;
+  padding:5px 0;
+  top:0;
+  left:0;
+  width:200%;
+  bottom:0;
+  
+  background:
+    radial-gradient(farthest-side at 50% calc(100% + var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t))),
+    radial-gradient(farthest-side at 50% calc(0%   - var(--p)), transparent 47%, var(--c) 50% calc(50% + var(--t)),transparent calc(52% + var(--t)));
+    
+  background-size:var(--w) var(--h);
+  background-position:calc(var(--w)/2) calc(-1*(var(--h)/2)),0px calc(var(--h)/2);
+  background-repeat:repeat-x;
+  background-origin:content-box;
+  
+  animation:move 3s infinite linear;
+}
+@keyframes move {
+  to {
+   transform:translateX(-50%);
+  }
+}
     </style>
 </head>
 
 <body>
 	<h1>All my Breads</h1>
-	<p>In the midst of the pandemic I started to make bread using sourdough culture. It wasn't always an easy ride and I continue to fail every now and again. Starting on November 3rd, 2020, this site will automatically publish a before/after picture of each loaf for no real reason.</p>
-	<p id="dash">/ / / /</p>
+	<p>In the midst of the pandemic I started to make bread using sourdough culture. It wasn't always an easy ride and I continue to fail every now and again. Starting on November 3rd, 2020, this site will publish a before/after picture of each loaf for no real reason.</p>
+	<div class="wave"></div>
 
 	<div class="container-fluid">
 		<div class="row">
@@ -78,7 +122,9 @@
 
     <script src='js/juxtapose.js'></script>
 </body>
-
+<footer class="page-footer font-small blue" style="text-align: center;">
+More from me <a href="https://calmurgu.com">here</a>.
+</footer>
 <script>
 
     slider_horizontal = new juxtapose.JXSlider('#horizontal-1', [{
