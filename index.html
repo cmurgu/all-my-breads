@@ -120,8 +120,23 @@ body a:hover{
 <body>
 
 	<h1>All My Breads</h1>
-	<p>During the pandemic I started to make bread using <a href="https://en.wikipedia.org/wiki/Sourdough#:~:text=Sourdough%20is%20a%20stable%20culture,in%20the%20form%20of%20sourness">sourdough culture</a> just like <a href="https://www.theguardian.com/us-news/2020/apr/19/coronavirus-stress-baking-sourdough-kneading-relax">everyone else</a>. It wasn't always an easy ride and I continue to fail every now and again. Starting in November 2020, this site will publish a before/after picture of each loaf for no real reason. 
+	<p>During the pandemic, I started to make bread using <a href="https://en.wikipedia.org/wiki/Sourdough#:~:text=Sourdough%20is%20a%20stable%20culture,in%20the%20form%20of%20sourness">sourdough culture</a> just like <a href="https://www.theguardian.com/us-news/2020/apr/19/coronavirus-stress-baking-sourdough-kneading-relax">everyone else</a>. It wasn't always an easy ride and I continue to fail every now and again. Starting November 2020, this site will publish a before/after picture of each loaf for no real reason. 
 		🤷</p>
+	<h1>Bitesized Bread Stats</h1>
+	<div class="container-fluid">
+		<div class="row" style="text-align: center;">
+			<div class="col-sm">
+				Hi
+			</div>
+			<div class="col-sm">
+				hi
+			</div>
+			<div class="col-sm">
+				hi
+			</div>
+		</div>
+	</div>
+	<p></p>
 	<div class="wave"></div>
 	<div class="container-fluid">
 		<div class="row">
@@ -157,6 +172,23 @@ body a:hover{
 </div>
 </div>
 </div>
+<div class="row">
+	<div class="col-sm">
+<div class="juxtapose" id="horizontal-7">
+
+</div>
+</div>
+<div class="col-sm">
+<div class="juxtapose" id="horizontal-8">
+
+</div>
+</div>
+<div class="col-sm">
+<div class="juxtapose" id="horizontal-9">
+
+</div>
+</div>
+</div>
 </div>
 
     <script src='js/juxtapose.js'></script>
@@ -180,7 +212,11 @@ Built with <a href="https://github.com/jsoma/tabletop">tabletop.js</a>, <a href=
 	  console.log("Successfully processed " + data.length + " rows!")
 	  var datas = data;
 	  var len = Object.keys(datas).length;
+	  var total = len * 450;
+	  var starter = len * 100;
+	  console.log(total);
 	  console.log(len);
+	  // document.getElementById('stats').innerHTML = 'Number of loaves: ' + len + '<br>' + 'Amount of flour: ' + total + 'g' + '<br>' + 'Amount of starter: ' + starter + 'g';
 	  for (var i = 0; i <= len; i++) {
 		  (function(){
 			  var ii = i;
@@ -195,8 +231,7 @@ Built with <a href="https://github.com/jsoma/tabletop">tabletop.js</a>, <a href=
         startingPosition: "50%",
         makeResponsive: true
 		  })
-		})();
-		};
+		})()};
 	};
 	window.addEventListener('DOMContentLoaded', init);
 </script>
